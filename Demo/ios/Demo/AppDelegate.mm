@@ -1,5 +1,5 @@
 #import "AppDelegate.h"
-
+#import "RCTWebView.h"
 #import <React/RCTBundleURLProvider.h>
 
 @implementation AppDelegate
@@ -27,5 +27,10 @@
   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 #endif
 }
-
+- (NSDictionary<NSString *,Class<RCTComponentViewProtocol>> *)thirdPartyFabricComponents
+{
+  NSMutableDictionary * dictionary = [super thirdPartyFabricComponents].mutableCopy;
+  dictionary[@"CustomWebView"] = [RCTWebView class];
+  return dictionary;
+}
 @end
