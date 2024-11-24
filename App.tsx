@@ -15,6 +15,7 @@ import {
   Header,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import MyMap from './MyMap';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -48,7 +49,8 @@ function App(): React.JSX.Element {
           </Text>
           <Text style={styles.title}>See your changes</Text>
           <ReloadInstructions />
-          <Text style={styles.title}>Debug</Text>
+          <MyMap />
+          <Text style={styles.title}>Debug Map</Text>
           <DebugInstructions />
         </View>
       </ScrollView>
